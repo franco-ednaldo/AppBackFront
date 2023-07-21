@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		89C8C8972A6B14B90056AE2E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C8962A6B14B90056AE2E /* AlertController.swift */; };
+		89C8C89A2A6B16F10056AE2E /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C8992A6B16F10056AE2E /* TabBarVC.swift */; };
+		89C8C89F2A6B17B90056AE2E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C89E2A6B17B90056AE2E /* HomeVC.swift */; };
+		89C8C8A22A6B1A2C0056AE2E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C8A12A6B1A2C0056AE2E /* HomeScreen.swift */; };
 		89CF48BB2A4F4D33002F8C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF48BA2A4F4D33002F8C0D /* AppDelegate.swift */; };
 		89CF48BD2A4F4D33002F8C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF48BC2A4F4D33002F8C0D /* SceneDelegate.swift */; };
 		89CF48BF2A4F4D33002F8C0D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF48BE2A4F4D33002F8C0D /* LoginVC.swift */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		89C8C8962A6B14B90056AE2E /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		89C8C8992A6B16F10056AE2E /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		89C8C89E2A6B17B90056AE2E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		89C8C8A12A6B1A2C0056AE2E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		89CF48B72A4F4D33002F8C0D /* AppBackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CF48BA2A4F4D33002F8C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CF48BC2A4F4D33002F8C0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,48 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		89C8C8982A6B16C20056AE2E /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				89C8C8992A6B16F10056AE2E /* TabBarVC.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		89C8C89B2A6B17340056AE2E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				89C8C8A02A6B1A170056AE2E /* Screen */,
+				89C8C89D2A6B17960056AE2E /* VC */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		89C8C89C2A6B175D0056AE2E /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				89C8C89B2A6B17340056AE2E /* Home */,
+				89DEB70D2A699046005D35BA /* Login */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		89C8C89D2A6B17960056AE2E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				89C8C89E2A6B17B90056AE2E /* HomeVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		89C8C8A02A6B1A170056AE2E /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				89C8C8A12A6B1A2C0056AE2E /* HomeScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		89CF48AE2A4F4D33002F8C0D = {
 			isa = PBXGroup;
 			children = (
@@ -76,9 +124,10 @@
 		89CF48B92A4F4D33002F8C0D /* AppBackFront */ = {
 			isa = PBXGroup;
 			children = (
+				89C8C89C2A6B175D0056AE2E /* Feature */,
+				89C8C8982A6B16C20056AE2E /* TabBarController */,
 				89C8C8952A6B14A60056AE2E /* Alert */,
 				89DEB7172A69CCBB005D35BA /* Utils */,
-				89DEB70D2A699046005D35BA /* Login */,
 				89CF48BA2A4F4D33002F8C0D /* AppDelegate.swift */,
 				89CF48BC2A4F4D33002F8C0D /* SceneDelegate.swift */,
 				89CF48C32A4F4D35002F8C0D /* Assets.xcassets */,
@@ -212,9 +261,12 @@
 				89CF48BF2A4F4D33002F8C0D /* LoginVC.swift in Sources */,
 				89DEB71A2A69CCF0005D35BA /* UIViewController + Extension.swift in Sources */,
 				89CF48CF2A4F5ECA002F8C0D /* LoginScreen.swift in Sources */,
+				89C8C89F2A6B17B90056AE2E /* HomeVC.swift in Sources */,
 				89CF48BB2A4F4D33002F8C0D /* AppDelegate.swift in Sources */,
 				89C8C8972A6B14B90056AE2E /* AlertController.swift in Sources */,
+				89C8C8A22A6B1A2C0056AE2E /* HomeScreen.swift in Sources */,
 				89DEB71C2A69D582005D35BA /* String+Extension.swift in Sources */,
+				89C8C89A2A6B16F10056AE2E /* TabBarVC.swift in Sources */,
 				89CF48BD2A4F4D33002F8C0D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
