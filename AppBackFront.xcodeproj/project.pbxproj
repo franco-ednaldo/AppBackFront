@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89C8C8972A6B14B90056AE2E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C8962A6B14B90056AE2E /* AlertController.swift */; };
 		89CF48BB2A4F4D33002F8C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF48BA2A4F4D33002F8C0D /* AppDelegate.swift */; };
 		89CF48BD2A4F4D33002F8C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF48BC2A4F4D33002F8C0D /* SceneDelegate.swift */; };
 		89CF48BF2A4F4D33002F8C0D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF48BE2A4F4D33002F8C0D /* LoginVC.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89C8C8962A6B14B90056AE2E /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		89CF48B72A4F4D33002F8C0D /* AppBackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CF48BA2A4F4D33002F8C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CF48BC2A4F4D33002F8C0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89C8C8952A6B14A60056AE2E /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				89C8C8962A6B14B90056AE2E /* AlertController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		89CF48AE2A4F4D33002F8C0D = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		89CF48B92A4F4D33002F8C0D /* AppBackFront */ = {
 			isa = PBXGroup;
 			children = (
+				89C8C8952A6B14A60056AE2E /* Alert */,
 				89DEB7172A69CCBB005D35BA /* Utils */,
 				89DEB70D2A699046005D35BA /* Login */,
 				89CF48BA2A4F4D33002F8C0D /* AppDelegate.swift */,
@@ -202,6 +213,7 @@
 				89DEB71A2A69CCF0005D35BA /* UIViewController + Extension.swift in Sources */,
 				89CF48CF2A4F5ECA002F8C0D /* LoginScreen.swift in Sources */,
 				89CF48BB2A4F4D33002F8C0D /* AppDelegate.swift in Sources */,
+				89C8C8972A6B14B90056AE2E /* AlertController.swift in Sources */,
 				89DEB71C2A69D582005D35BA /* String+Extension.swift in Sources */,
 				89CF48BD2A4F4D33002F8C0D /* SceneDelegate.swift in Sources */,
 			);

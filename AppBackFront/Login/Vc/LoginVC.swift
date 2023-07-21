@@ -8,9 +8,11 @@
 import UIKit
 import FirebaseAuth
 class LoginVC: UIViewController {
-    var loginScreen:LoginScreen?
+    private var loginScreen:LoginScreen?
     
     private var auth: Auth?
+    
+    private var alert:AlertController?
     
     override func loadView() {
         self.loginScreen = LoginScreen()
@@ -24,6 +26,10 @@ class LoginVC: UIViewController {
         self.loginScreen?.configTextFieldsDelegate(delegate: self)
         dismissKeyBoard()
         isEnableLoginButton(false)
+        
+        alert = AlertController(controller: self)
+        loginScreen?.emailTextField.text = "Ednaldo@gmail.com"
+        loginScreen?.passwordTextField.text = "123456"
     }
     
     func validateTextFields(){
@@ -56,6 +62,9 @@ extension LoginVC:LoginScreenProtocol {
                print("Success login")
             } else {
                 print(error?.localizedDescription)
+                self.alert?.getAlert(title: "Falha no Login", message: error?.localizedDescription ?? "", completion: {
+                    print("Button pressed")
+                })
             }
         })
     }
