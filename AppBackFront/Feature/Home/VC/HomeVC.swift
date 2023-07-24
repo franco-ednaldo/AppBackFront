@@ -9,6 +9,8 @@ import UIKit
 
 class HomeVC: UIViewController {
     private var screen:HomeScreen?
+    private var viewModel:HomeViewModel = HomeViewModel()
+    
     override func loadView() {
         let screen = HomeScreen()
         view = screen
@@ -19,9 +21,13 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate(delegate: self)
+        viewModel.fetchRequest(.request)
+        
         screen?.configTableViewProtocol(delegate: self, dataSource: self)
         screen?.configCollectionViewProtocol(delegate: self, dataSource: self)
         screen?.configSearchBarDelegate(delegate: self)
+        
     }
     
 }
@@ -43,7 +49,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         return CGSize(width: collectionView.frame.width, height: 150)
     }
     
-    
 }
 
 
@@ -54,6 +59,18 @@ extension HomeVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    
+}
+
+extension HomeVC:HomeViewModelDelegate {
+    func success() {
+        screen?.configTableViewProtocol(delegate: self, dataSource: self)
+    }
+    
+    func failure() {
+        
     }
     
     

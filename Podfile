@@ -6,5 +6,6 @@ target 'AppBackFront' do
   use_frameworks!
 
   # Pods for AppBackFront
-
+  pod 'Alamofire'
+  pod 'AlamofireImage'
 end
