@@ -22,6 +22,8 @@
 		89DCBAD72A6EBFE80048DC3A /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCBAD62A6EBFE80048DC3A /* GenericService.swift */; };
 		89DCBADA2A6EC20E0048DC3A /* HomeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 89DCBAD92A6EC20E0048DC3A /* HomeData.json */; };
 		89DCBADD2A6EC3380048DC3A /* NFTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCBADC2A6EC3380048DC3A /* NFTData.swift */; };
+		89DCBAE12A6F0F4D0048DC3A /* NftFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCBAE02A6F0F4D0048DC3A /* NftFilterCell.swift */; };
+		89DCBAE32A6F0F990048DC3A /* NftFilterCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCBAE22A6F0F990048DC3A /* NftFilterCellScreen.swift */; };
 		89DEB7112A69C53B005D35BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89DEB7102A69C53B005D35BA /* GoogleService-Info.plist */; };
 		89DEB7142A69CA5A005D35BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 89DEB7132A69CA5A005D35BA /* FirebaseAuth */; };
 		89DEB7162A69CA5A005D35BA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89DEB7152A69CA5A005D35BA /* FirebaseCrashlytics */; };
@@ -50,6 +52,8 @@
 		89DCBAD62A6EBFE80048DC3A /* GenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
 		89DCBAD92A6EC20E0048DC3A /* HomeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeData.json; sourceTree = "<group>"; };
 		89DCBADC2A6EC3380048DC3A /* NFTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTData.swift; sourceTree = "<group>"; };
+		89DCBAE02A6F0F4D0048DC3A /* NftFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftFilterCell.swift; sourceTree = "<group>"; };
+		89DCBAE22A6F0F990048DC3A /* NftFilterCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftFilterCellScreen.swift; sourceTree = "<group>"; };
 		89DEB7102A69C53B005D35BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Documents/firebase/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89DEB7192A69CCF0005D35BA /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		89DEB71B2A69D582005D35BA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 		89C8C89C2A6B175D0056AE2E /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				89DCBADE2A6F0E950048DC3A /* Cells */,
 				89C8C89B2A6B17340056AE2E /* Home */,
 				89DEB70D2A699046005D35BA /* Login */,
 			);
@@ -198,6 +203,31 @@
 				89DCBADC2A6EC3380048DC3A /* NFTData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		89DCBADE2A6F0E950048DC3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				89DCBADF2A6F0EA30048DC3A /* NftFilter */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		89DCBADF2A6F0EA30048DC3A /* NftFilter */ = {
+			isa = PBXGroup;
+			children = (
+				89DCBAE42A6F0FC00048DC3A /* Screen */,
+				89DCBAE02A6F0F4D0048DC3A /* NftFilterCell.swift */,
+			);
+			path = NftFilter;
+			sourceTree = "<group>";
+		};
+		89DCBAE42A6F0FC00048DC3A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				89DCBAE22A6F0F990048DC3A /* NftFilterCellScreen.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		89DEB70D2A699046005D35BA /* Login */ = {
@@ -384,9 +414,11 @@
 			files = (
 				89CF48BF2A4F4D33002F8C0D /* LoginVC.swift in Sources */,
 				89DCBAD12A6EBF070048DC3A /* HomeViewModel.swift in Sources */,
+				89DCBAE32A6F0F990048DC3A /* NftFilterCellScreen.swift in Sources */,
 				89DEB71A2A69CCF0005D35BA /* UIViewController + Extension.swift in Sources */,
 				89CF48CF2A4F5ECA002F8C0D /* LoginScreen.swift in Sources */,
 				89C8C89F2A6B17B90056AE2E /* HomeVC.swift in Sources */,
+				89DCBAE12A6F0F4D0048DC3A /* NftFilterCell.swift in Sources */,
 				89CF48BB2A4F4D33002F8C0D /* AppDelegate.swift in Sources */,
 				89DCBAD72A6EBFE80048DC3A /* GenericService.swift in Sources */,
 				89DCBAD52A6EBF950048DC3A /* HomeService.swift in Sources */,

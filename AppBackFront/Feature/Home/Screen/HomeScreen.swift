@@ -42,7 +42,7 @@ class HomeScreen: UIView {
         collectionView.backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 1/255, alpha: 1.0)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
-        // TODO register
+        collectionView.register(NftFilterCell.self, forCellWithReuseIdentifier: NftFilterCell.identifier)
         
         return collectionView
     }()
@@ -96,7 +96,7 @@ class HomeScreen: UIView {
             viewBackGround.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             viewBackGround.leadingAnchor.constraint(equalTo: leadingAnchor),
             viewBackGround.trailingAnchor.constraint(equalTo: trailingAnchor),
-            viewBackGround.heightAnchor.constraint(equalToConstant: 200),
+            viewBackGround.heightAnchor.constraint(equalToConstant: 160),
             
             logoImageView.topAnchor.constraint(equalTo: viewBackGround.topAnchor, constant: 5),
             logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),

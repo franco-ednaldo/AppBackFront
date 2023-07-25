@@ -46,4 +46,16 @@ class HomeViewModel {
         }
         
     }
+    
+    func getFilterNft(indexPath: IndexPath) -> FilterNft  {
+        return self.nftData?.filterListNft?[indexPath.row] ?? FilterNft()
+    }
+    
+    func numberOfRowsInSection() -> Int {
+        return self.nftData?.filterListNft?.count ?? 0
+    }
+    
+    func sizeForItemAt() -> CGSize {
+        return CGSize(width: 100, height: 34)
+    }
 }
