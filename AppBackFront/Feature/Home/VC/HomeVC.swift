@@ -23,15 +23,20 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         viewModel.delegate(delegate: self)
         viewModel.fetchRequest(.mock)
-        
-        //screen?.configSearchBarDelegate(delegate: self)
+        screen?.configSearchBarDelegate(delegate: self)
         
     }
-
 }
 
 extension HomeVC:UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterSearchText(searchText)
+        screen?.tableView.reloadData()
+    }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -57,11 +62,19 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 
 extension HomeVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfRowsInSectionTableView()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: NftTableViewCell.identifier, for: indexPath) as? NftTableViewCell
+        
+        cell?.setupCell(data: viewModel.getNft(indexPath: indexPath))
+        
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.heightForRowAt()
     }
     
     
@@ -69,8 +82,11 @@ extension HomeVC:UITableViewDelegate, UITableViewDataSource {
 
 extension HomeVC:HomeViewModelDelegate {
     func success() {
-        // screen?.configTableViewProtocol(delegate: self, dataSource: self)
-        screen?.configCollectionViewProtocol(delegate: self, dataSource: self)
+        DispatchQueue.main.async {
+            self.screen?.configTableViewProtocol(delegate: self, dataSource: self)
+            self.screen?.configCollectionViewProtocol(delegate: self, dataSource: self)
+            self.screen?.tableView.reloadData()
+        }
     }
     
     func failure() {
