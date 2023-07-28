@@ -22,7 +22,6 @@ class NftFilterCell: UICollectionViewCell {
         super.init(frame: frame)
         addElements()
         addConstraints()
-        screen.delegate(delegate: self)
     }
     
     required init?(coder: NSCoder) {
@@ -56,15 +55,5 @@ class NftFilterCell: UICollectionViewCell {
             screen.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-    
-}
-
-extension NftFilterCell:NftFilterCellScreenDelegate {
-    
-    func tappedSelectionLabel() {
-        self.filter?.isSelected = true
-        self.setSelectedItem()
-    }
-    
     
 }

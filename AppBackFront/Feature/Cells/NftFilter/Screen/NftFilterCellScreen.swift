@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NftFilterCellScreenDelegate: AnyObject {
-    func tappedSelectionLabel()
+    
 }
 
 class NftFilterCellScreen: UIView {
@@ -27,19 +27,9 @@ class NftFilterCellScreen: UIView {
         label.clipsToBounds = true
         label.layer.cornerRadius = 18
         label.textAlignment = .center
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tappedSelectionLabel))
-        tap.numberOfTapsRequired = 1
-        label.addGestureRecognizer(tap)
-        label.isUserInteractionEnabled = true
         return label
     }()
     
-    @objc func tappedSelectionLabel(_ sender: UITapGestureRecognizer){
-        print(#function)
-        delegate?.tappedSelectionLabel()
-    }
-    
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()

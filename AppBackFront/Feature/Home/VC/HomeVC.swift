@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
         screen = HomeScreen()
         view = screen
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
@@ -47,7 +48,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: NftFilterCell.identifier, for: indexPath) as? NftFilterCell
-
+        
         cell?.setupCell(filter: viewModel.getFilterNft(indexPath: indexPath))
         
         return cell ?? UICollectionViewCell()
@@ -57,8 +58,17 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         return viewModel.sizeForItemAt()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.setFilter(indexPath: indexPath, searchText: screen?.searchBar.text ?? "")
+        screen?.collectionView.reloadData()
+        screen?.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        screen?.tableView.reloadData()
+        if viewModel.numberOfRowsInSectionTableView() > 0 {
+            screen?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
+    }
+    
 }
-
 
 extension HomeVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,6 +87,10 @@ extension HomeVC:UITableViewDelegate, UITableViewDataSource {
         return viewModel.heightForRowAt()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data:Nft = viewModel.getNft(indexPath: indexPath)
+        present(NftDetailVC(nft: data), animated: true)
+    }
     
 }
 
