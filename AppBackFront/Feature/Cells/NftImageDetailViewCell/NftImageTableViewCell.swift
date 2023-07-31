@@ -27,9 +27,11 @@ class NftImageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(urlImage:String) {
-        guard let url = URL(string: urlImage) else { return }
-        screen.nftImageView.af.setImage(withURL: url)
+    func setupCell(urlImage:String, delegate:NftImageDelegate) {
+        if let url = URL(string: urlImage) {
+            screen.nftImageView.af.setImage(withURL: url)
+        }
+        screen.delegate(delegate: delegate)
     }
     
     private func addElements(){

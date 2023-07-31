@@ -14,15 +14,44 @@ class NftDetailViewModel {
         self.nft = nft
     }
     
+    var idNft:Int {
+        return nft.nftID ?? 0
+    }
+    
+    var nftTitle:String {
+        return nft.nftNameImage ?? ""
+    }
+    
+    var nftDescription:String {
+        return nft.nftDescription ?? ""
+    }
+    
     var nftImage:String {
         return nft.nftImage ?? ""
     }
     
-    func numberOfRowsInSection() -> Int{
-        return 2
+    func getNft()->Nft{
+        return self.nft
     }
     
-    func heightForRowAt() -> CGFloat {
-        return 400
+    func numberOfRowsInSection() -> Int{
+        return 3
     }
+    
+    func heightForRowAt(indexPath: IndexPath, width: CGFloat) -> CGFloat {
+        switch NameCellNftDetail(rawValue: indexPath.row) {
+            
+        case .nftImage:
+            return 400
+        case .description:
+            return (nftDescription.height(withConstrainedWidth: width - 40, font: UIFont.systemFont(ofSize: 18))) + 89
+        case .LastestDeal:
+            return 400
+        default:
+            return 0
+        }
+
+    }
+    
+
 }

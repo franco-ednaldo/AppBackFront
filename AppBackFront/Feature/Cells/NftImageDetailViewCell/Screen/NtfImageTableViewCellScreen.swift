@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol NftImageDelegate: AnyObject {
+    func tappedClose()
+    func tappedSearch()
+}
+
+
 class NtfImageTableViewCellScreen: UIView {
+    
+    private weak var delegate: NftImageDelegate?
     
     lazy var nftImageView:UIImageView = {
         let imageView = UIImageView()
@@ -31,7 +39,7 @@ class NtfImageTableViewCellScreen: UIView {
     }()
     
     @objc func tappedCloseButton(_ sender: UIButton){
-        print(#function)
+        delegate?.tappedClose()
     }
     
     lazy var magnifyingGlassButton:UIButton = {
@@ -47,7 +55,7 @@ class NtfImageTableViewCellScreen: UIView {
     }()
     
     @objc func tappedMagnifyingGlassButton(_ sender: UIButton){
-        print(#function)
+        delegate?.tappedSearch()
     }
     
     override init(frame: CGRect) {
@@ -58,6 +66,10 @@ class NtfImageTableViewCellScreen: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func delegate(delegate: NftImageDelegate?) {
+        self.delegate = delegate
     }
     
     private func addElements() {
