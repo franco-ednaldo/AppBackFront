@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum HeightLastestDeal:CGFloat {
+    case height = 70
+}
+
 class LatestDealViewModel {
     var nft: Nft?
     
@@ -23,6 +27,19 @@ class LatestDealViewModel {
     }
     
     func heightForRowAt() -> CGFloat {
-        return 70
+        return HeightLastestDeal.height.rawValue
+    }
+    
+    func loadLatestDeal(indexPath: IndexPath) -> LatestDeal {
+        return self.nft?.latestDeals?[indexPath.row] ?? LatestDeal()
+    }
+    
+    func isInicial(indexPath:IndexPath) -> Bool {
+        return indexPath.row == 0
+    }
+    
+    
+    func isFinal(indexPath:IndexPath) -> Bool {
+        return indexPath.row == numberOfRowsInSection() - 1
     }
 }
