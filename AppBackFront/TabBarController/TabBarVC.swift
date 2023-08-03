@@ -32,7 +32,7 @@ class TabBarVC: UITabBarController {
         tabBar.scrollEdgeAppearance = tabBarAppearance
         
         guard let items = tabBar.items else { return }
-        items[0].image = UIImage(systemName: "trash")
+        items[0].image = UIImage(systemName: "homekit")
         items[0].title = "Home"
         
         items[1].image = UIImage(systemName: "wallet.pass")
