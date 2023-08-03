@@ -84,7 +84,7 @@ extension NftDetailVC:NftImageDelegate {
     }
     
     func tappedSearch() {
-        print(#function)
+        present(MagnifyingGlassVC(urlImage: viewModel.nftImage), animated: true)
     }
     
 }
