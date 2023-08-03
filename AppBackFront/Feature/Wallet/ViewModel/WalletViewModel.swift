@@ -14,6 +14,7 @@ protocol WalletViewModelDelegate: AnyObject {
 
 enum WalletNameCell: Int {
     case quotationEth = 0
+    case transactionList = 1
 }
 
 class WalletViewModel {
@@ -52,18 +53,28 @@ class WalletViewModel {
         
     }
     
+    public var latestTransactionsCell: LatestTransactionsCell {
+            return walletData?.latestTransactionsCell ?? LatestTransactionsCell()
+    }
+    
+    public var quotationEthereum: QuotationEthereum {
+        return walletData?.quotationEthereum ?? QuotationEthereum()
+    }
+    
     func loadCurrentQuotationEthereum(indexPath: IndexPath) -> QuotationEthereum {
         return walletData?.quotationEthereum ?? QuotationEthereum()
     }
     
     func numberOfRowsInSection() -> Int {
-        return 1
+        return 2
     }
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
         switch WalletNameCell(rawValue: indexPath.row) {
         case .quotationEth:
             return 250
+        case .transactionList:
+            return HeightLatestTransactions.height.rawValue * CGFloat(walletData?.latestTransactionsCell?.listOfTransactions?.count ?? 0) + 75
         default:
             return 0
             

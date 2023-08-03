@@ -19,6 +19,7 @@ class ListOffersTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         addElements()
         addConstraints()
         backgroundColor = UIColor(red: 26/255, green: 26/255, blue: 26/255, alpha: 1.0)
