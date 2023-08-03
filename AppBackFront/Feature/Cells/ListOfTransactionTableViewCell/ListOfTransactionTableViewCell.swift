@@ -46,6 +46,7 @@ class ListOfTransactionTableViewCell: UITableViewCell {
         
         screen.idTransactionLabel.text = data.idTransaction ?? ""
         screen.transactionImageView.image = UIImage(named: data.image ?? "")
+        
         screen.valueInDollarLabel.text = "$\(data.valueDollar ?? 0)"
         screen.dateEndHourLabel.text = data.dateAndHour ?? ""
         

@@ -33,12 +33,14 @@ class ListOffersTableViewCell: UITableViewCell {
         if let url = URL(string: data.userImage ?? "") {
             screen.userImageView.af.setImage(withURL: url, placeholderImage: UIImage(systemName: "person.circle.fill"))
         }
+        
         screen.layer.borderColor = UIColor.white.cgColor
         screen.layer.borderWidth = 0.5
         
         screen.nameUserLabel.text = data.userName ?? ""
         screen.nftPriceLabel.text = "\(data.nftPrice ?? 0) ETH"
         screen.lastVizualizationLabel.text = data.lastAccess ?? ""
+        
         if isInicial {
             screen.roundCorners(cornerRadiuns: 20, typeCorners: [ .layerMinXMinYCorner, .layerMaxXMinYCorner])
         }
